@@ -8,7 +8,6 @@ import threading
 import mss
 
 # Configuration variables
-# You may need to adjust these values based on your screen and game window
 GAME_REGION = None  # Will be set by calibration
 START_KEY = 'f8'    # Key to start/stop the bot
 PAUSE_KEY = 'f10'   # Key to pause/unpause the bot
@@ -338,7 +337,7 @@ def main():
     print(f"Press {START_KEY} to start/stop")
     print(f"Press {PAUSE_KEY} to pause/resume")
     print(f"Press {DEBUG_KEY} to toggle debug mode")
-    print("Press 'q' to quit")
+    print(f"Press {QUIT_KEY} to quit")
     
     # Start key listener in a separate thread
     listener_thread = threading.Thread(target=cross_platform_key_listener)
@@ -354,19 +353,6 @@ def main():
             if running and not paused:
                 try:
                     # Capture the game screen
-                    # Convert top_left_x, top_left_y, x_length, y_length to bottom_left_x, bottom_left_y, top_right_x, top_right_y
-                    # bbox_screen = (
-                    #     GAME_REGION[0], # bottom left x
-                    #     GAME_REGION[1], # bottom left y
-                    #     GAME_REGION[0] + GAME_REGION[2], # top right x
-                    #     GAME_REGION[1] + GAME_REGION[3] # top right y
-                    #     )
-                    # bbox = (
-                    #     bbox_screen[0] + int(GAME_REGION[2] * 0.2),
-                    #     bbox_screen[1] + int(GAME_REGION[3] * 0.5), 
-                    #     bbox_screen[2] - int(GAME_REGION[2] * 0.14), 
-                    #     bbox_screen[3] - int(GAME_REGION[3] * 0.15),
-                    #     )
                     monitor = {
                         "left": GAME_REGION[0] + int(GAME_REGION[2] * 0.2),
                         "top": GAME_REGION[1] + int(GAME_REGION[3] * 0.4),
