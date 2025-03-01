@@ -310,15 +310,15 @@ def restart_game_sequence():
     #Exit Game
     pyautogui.moveTo(game_region[0] + game_region[2] * ExitButtonPos[0], game_region[1] + game_region[3] * ExitButtonPos[1])
     pyautogui.click()
-    time.sleep(0.5)
+    time.sleep(1)
     # Click on Coffee Bags
     pyautogui.moveTo(game_region[0] + game_region[2] * CafeCoffeeBagsPos[0], game_region[1] + game_region[3] * CafeCoffeeBagsPos[1])
     pyautogui.click()
-    time.sleep(3)
+    time.sleep(4)
     # Confirm Play
     pyautogui.moveTo(game_region[0] + game_region[2] * ConfirmPlayPos[0], game_region[1] + game_region[3] * ConfirmPlayPos[1])
     pyautogui.click()
-    time.sleep(0.5)
+    time.sleep(1)
     # Start Game
     pyautogui.moveTo(game_region[0] + game_region[2] * StartGamePos[0], game_region[1] + game_region[3] * StartGamePos[1])
     pyautogui.click()
