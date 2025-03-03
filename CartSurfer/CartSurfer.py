@@ -276,7 +276,7 @@ def restart_game_sequence():
     StartGamePos = (998/1186, 591/746)
     
     #Wait for exit screen
-    time.sleep(1)
+    time.sleep(2)
     manage_exit_on_long_sleeps()
     
     #Exit Game
